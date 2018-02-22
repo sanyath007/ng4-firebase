@@ -108,6 +108,7 @@ export class AuthService {
   emailLogin(email : string, password : string) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
+        console.log(user);
         this.authState = user
         this.updateUserData()
         this.router.navigate(['/'])
